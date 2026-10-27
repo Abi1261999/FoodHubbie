@@ -1,4 +1,4 @@
-import type { Food, Restaurant } from "./types";
+import type { Food, Restaurant } from "../types";
 
 export const restaurants: Restaurant[] = [
   { id: 1, name: "Saffron & Spice", cuisine: "North Indian • Mughlai", rating: 4.8, time: "25–35 min", fee: 25, image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900", offer: "20% OFF", featured: true },
