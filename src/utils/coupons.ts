@@ -1,0 +1,3 @@
+export type CouponResult = { valid: boolean; discount: number; message: string };
+const COUPONS: Record<string,{rate:number;minimum:number}> = { FIRSTBITE:{rate:.2,minimum:199}, FOODIE10:{rate:.1,minimum:99} };
+export function applyCoupon(code: string, subtotal: number): CouponResult { const normalized=code.trim().toUpperCase(); const coupon=COUPONS[normalized]; if(!coupon) return {valid:false,discount:0,message:"Coupon code not recognized."}; if(subtotal<coupon.minimum) return {valid:false,discount:0,message:`Order subtotal must be at least ₹${coupon.minimum}.`}; return {valid:true,discount:Math.round(subtotal*coupon.rate),message:`${Math.round(coupon.rate*100)}% discount applied.`}; }
